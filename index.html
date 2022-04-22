@@ -16,9 +16,24 @@ p {font-family:Times, serif;font-size:14px;font-style:normal;font-weight:normal;
 alt = "Logo" height = "250" width = "250" />
 <h1>SCP-RP</h1>
 <p>Login with your authentication key:</p>
+<div class="wrapper">
+<form method="POST" class="form1" onsubmit="return checkPassword();  return false;">
 <form name="key">
-<input type="text" name="Key Input">
+<input type="text" name="Key Input" id="auth">
 <input type="submit" value="Authenticate"/>
+</form>
+</div>
+<script>
+  function checkPassword(){
+   if(document.getElementById('auth').value == '11110'){
+    alert('Authenticated!'); 
+    location.href="https://mamubus.github.io/035";
+     } else {
+     alert('Access Denied!');
+      return false;
+    }
+   }
+</script>
 <p>If you are new and want to apply for Foundation Personnel L1:</p>
 <form action="/form/submit" method="GET">
 <textarea rows="5" cols="60" name="text" placeholder=""></textarea>
