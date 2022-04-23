@@ -16,23 +16,23 @@ p {font-family:Times, serif;font-size:14px;font-style:normal;font-weight:normal;
 alt = "Logo" height = "250" width = "250" />
 <h1>SCP-RP</h1>
 <p>Login with your authentication key:</p>
-<div class="wrapper">
-<form method="POST" class="form1" onsubmit="return checkPassword();  return false;">
-<form name="key">
-<input type="text" name="Key Input" id="auth">
-<input type="submit" value="Authenticate"/>
+<form action="display.html" method="get">
+    <input type="text" name="auth" />
+    <input type="submit" value="Authenticate" />
 </form>
-</div>
 <script>
-  function checkPassword(){
-   if(document.getElementById('auth').value == '11110'){
-    alert('Authenticated!'); 
-    location.href="/035.html";
-     } else {
-     alert('Access Denied!');
-      return false;
-    }
-   }
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+var sn = getParameterByName('auth', '035.html');
+document.getElementById("write").innerHTML = sn;
 </script>
 <p>If you are new and want to apply for Foundation Personnel L1:</p>
 <form action="/form/submit" method="GET">
