@@ -6,7 +6,7 @@ function httpGet(theUrl) {
 }
 
 
-var count = httpGet("balance.txt")
+var count = httpGet("https://mamubus.github.io/balance.txt")
 
 function randomNumber(min, max) { 
     return Math.random() * (max - min) + min;
